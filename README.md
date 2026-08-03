@@ -1,76 +1,52 @@
-# Infra Forge Lab
+# Infra Forge Learning Lab
 
-Hands-on lab repository for learning Terraform, Ansible, Kubernetes, and platform engineering workflows. It serves as a personal lab notebook and implementation reference for provisioning infrastructure, configuring systems, and operating containerized workloads across local hypervisors, Linux systems, and cluster environments.
+Hands-on learning repository for Terraform, Ansible, Kubernetes, GPU infrastructure, GitOps, identity, distributed applications, and AI workloads.
 
-## Sections
+## Start here
 
-| Section | Description |
+### [Open the master training tracker](https://github.com/en4ble1337/terra-kube-ansible/issues/12)
+
+That issue is the only progress page you need to bookmark.
+
+## What to do today
+
+1. Open the **Current focus** link in the master tracker.
+2. Work on the first unchecked task.
+3. Validate that it works.
+4. Commit the code, configuration, or documentation.
+5. Check the task in GitHub.
+
+## Current phase
+
+### [Phase 1 — Terraform: Infrastructure as Code](https://github.com/en4ble1337/terra-kube-ansible/issues/1)
+
+Primary objective: build and rebuild the Proxmox VM foundation as code while preparing for the HashiCorp Terraform Associate certification.
+
+Do not start the next phase until the current phase completion gate passes.
+
+## Where work is stored
+
+| Folder | Purpose |
 |---|---|
-| [Terraform](./terraform/) | Infrastructure provisioning labs (Proxmox LXC, VMs, providers) |
-| [Ansible](./ansible/) | Configuration management labs (inventories, playbooks, roles, vault) |
-| [Kubernetes](./kubernetes/) | Container orchestration labs (kubectl, deployments, services, ingress, Helm) |
-| [Integrated Labs](./integrated-labs/) | Combined Terraform + Ansible + Kubernetes end-to-end workflows |
-| [Docs](./docs/) | Troubleshooting, glossary, and reference notes |
+| [`terraform/`](./terraform/) | Terraform code and Proxmox provisioning labs |
+| [`ansible/`](./ansible/) | Inventories, playbooks, roles, and configuration automation |
+| [`kubernetes/`](./kubernetes/) | kubeadm, K3s, GPU Operator, storage, ingress, and operations |
+| [`integrated-labs/`](./integrated-labs/) | End-to-end Terraform, Ansible, and Kubernetes workflows |
+| [`docs/`](./docs/) | Runbooks, architecture notes, troubleshooting, and evidence |
+| [`scripts/`](./scripts/) | Supporting automation and validation scripts |
 
-## Current Labs
+Folders for later phases can be created when those phases begin. There is no need to maintain empty structure in advance.
 
-- [Terraform Proxmox LXC Containers](./terraform/proxmox/lxc-containers.md) — Provision and manage LXC containers as code on Proxmox VE.
+## Simple operating rules
 
-## Learning Roadmap
+- Work on **one phase at a time**.
+- A task is complete only when it works and the result is committed or documented.
+- Use GitHub Issues for progress tracking.
+- Use the repository for code, configuration, notes, and evidence.
+- Use ChatGPT for instruction, troubleshooting, reviews, and updating GitHub when requested.
+- Do not create a second tracker in Excel, GitHub Projects, or another dashboard.
 
-| Lab Area | Description | Target Skills | Status |
-|---|---|---|---|
-| **Terraform** | Hypervisor & Cloud Provisioning | Provider Setup, State Management, Map Variables, Proxmox LXC | Ready (Initial Lab) |
-| **Ansible** | System Configuration | Inventories, Playbooks, Roles, Secret Vaults, Package baselines | Placeholder |
-| **Kubernetes** | Application Orchestration | kubectl basics, Deployments, Services, PVC storage, Helm Charts | Placeholder |
-| **Integrated Labs** | End-to-End Automation | Terraform to Ansible handoff, Kubernetes nodes bootstrapping | Placeholder |
-
-## Repo Structure
-
-```text
-infra-forge-lab/
-├── README.md
-├── .gitignore
-├── terraform/
-│   ├── README.md
-│   └── proxmox/
-│       ├── README.md
-│       └── lxc-containers.md
-├── ansible/
-│   ├── README.md
-│   ├── inventories.md
-│   ├── playbooks.md
-│   ├── roles.md
-│   └── vault.md
-├── kubernetes/
-│   ├── README.md
-│   ├── kubectl-basics.md
-│   ├── deployments.md
-│   ├── services.md
-│   ├── ingress.md
-│   ├── storage.md
-│   └── helm.md
-├── integrated-labs/
-│   ├── README.md
-│   ├── terraform-to-ansible.md
-│   ├── terraform-to-kubernetes.md
-│   └── full-platform-workflow.md
-├── docs/
-│   ├── troubleshooting.md
-│   ├── glossary.md
-│   └── references.md
-└── scripts/
-    └── README.md
-```
-
-## Secrets Warning
+## Secrets warning
 
 > [!WARNING]
-> Do not commit passwords, credentials, API tokens, `.tfvars` files with secrets, kubeconfig files for live clusters, or raw Ansible Vault password files. All sensitive configurations should be git-ignored by default using the provided `.gitignore`.
-
-## Status
-
-- **Terraform**: Initial content active (Telmate Proxmox LXC guide imported).
-- **Ansible**: Placeholder study guides ready (scaffolded with templates).
-- **Kubernetes**: Placeholder study guides ready (scaffolded with templates).
-- **Integrated Labs**: Placeholder guides created to map the automation workflow.
+> Do not commit passwords, API tokens, private keys, live kubeconfig files, unencrypted secrets, `.tfvars` files containing credentials, or raw Ansible Vault password files.
