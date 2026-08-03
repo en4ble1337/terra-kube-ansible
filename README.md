@@ -1,92 +1,52 @@
-# Infra Forge Lab
+# Infra Forge Learning Lab
 
-Hands-on lab repository for learning Terraform, Ansible, Kubernetes, and platform engineering workflows. It serves as a personal lab notebook and implementation reference for provisioning infrastructure, configuring systems, and operating containerized and AI workloads across Proxmox, Linux, Kubernetes, and selected cloud services.
+Hands-on learning repository for Terraform, Ansible, Kubernetes, GPU infrastructure, GitOps, identity, distributed applications, and AI workloads.
 
-## Learning dashboard
+## Start here
 
-The detailed learning program is tracked through GitHub Issues and rendered by a read-only HTML dashboard in [`docs/index.html`](./docs/index.html).
+### [Open the master training tracker](https://github.com/en4ble1337/terra-kube-ansible/issues/12)
 
-- **Live task state:** [Roadmap issues](https://github.com/en4ble1337/terra-kube-ansible/issues)
-- **Operating guide:** [Learning dashboard workflow](./docs/learning-dashboard.md)
-- **Planned GitHub Pages URL:** `https://en4ble1337.github.io/terra-kube-ansible/`
+That issue is the only progress page you need to bookmark.
 
-Progress is evidence-based. A task is checked only after the implementation works and the repository contains the relevant code, runbook, command output, screenshot, or explanation.
+## What to do today
 
-## Sections
+1. Open the **Current focus** link in the master tracker.
+2. Work on the first unchecked task.
+3. Validate that it works.
+4. Commit the code, configuration, or documentation.
+5. Check the task in GitHub.
 
-| Section | Description |
+## Current phase
+
+### [Phase 1 — Terraform: Infrastructure as Code](https://github.com/en4ble1337/terra-kube-ansible/issues/1)
+
+Primary objective: build and rebuild the Proxmox VM foundation as code while preparing for the HashiCorp Terraform Associate certification.
+
+Do not start the next phase until the current phase completion gate passes.
+
+## Where work is stored
+
+| Folder | Purpose |
 |---|---|
-| [Terraform](./terraform/) | Infrastructure provisioning labs for Proxmox and selected cloud comparisons |
-| [Ansible](./ansible/) | Configuration management labs: inventories, playbooks, roles, and secrets |
-| [Kubernetes](./kubernetes/) | kubeadm, K3s comparison, GPU Operator, storage, ingress, Helm, and operations |
-| [Integrated Labs](./integrated-labs/) | Terraform-to-Ansible-to-Kubernetes end-to-end workflows |
-| [Docs](./docs/) | Architecture, troubleshooting, evidence, glossary, and references |
+| [`terraform/`](./terraform/) | Terraform code and Proxmox provisioning labs |
+| [`ansible/`](./ansible/) | Inventories, playbooks, roles, and configuration automation |
+| [`kubernetes/`](./kubernetes/) | kubeadm, K3s, GPU Operator, storage, ingress, and operations |
+| [`integrated-labs/`](./integrated-labs/) | End-to-end Terraform, Ansible, and Kubernetes workflows |
+| [`docs/`](./docs/) | Runbooks, architecture notes, troubleshooting, and evidence |
+| [`scripts/`](./scripts/) | Supporting automation and validation scripts |
 
-## Current labs
+Folders for later phases can be created when those phases begin. There is no need to maintain empty structure in advance.
 
-- [Terraform Proxmox LXC Containers](./terraform/proxmox/lxc-containers.md) — provision and manage LXC containers as code on Proxmox VE.
-- [Roadmap 01: Terraform](https://github.com/en4ble1337/terra-kube-ansible/issues/1) — build the repeatable Proxmox VM foundation for the Kubernetes lab.
+## Simple operating rules
 
-## Learning roadmap
-
-| Phase | Area | Primary outcome | Estimated effort |
-|---:|---|---|---:|
-| 1 | Terraform | Rebuildable Proxmox VM foundation | 30 hours |
-| 2 | Ansible | Idempotent Kubernetes-node configuration | 18 hours |
-| 3 | Kubernetes foundations | kubeadm cluster plus K3s comparison | 36 hours |
-| 4 | NVIDIA GPU Operator | Schedulable and observable GPU worker | 18 hours |
-| 5 | CSI storage | Persistent Synology NFS-backed workloads | 16 hours |
-| 6 | Argo CD | GitOps deployment, drift repair, and rollback | 16 hours |
-| 7 | Azure DevOps | Self-hosted CI/CD agent and deployment pipeline | 18 hours |
-| 8 | Microsoft Entra | OIDC-protected API with authorization | 18 hours |
-| 9 | Event-driven microservices | Resilient NATS-based asynchronous workflow | 20 hours |
-| 10 | AI capstone | Authenticated, asynchronous GPU-backed AI service | 24 hours |
-
-The program totals approximately **214 hours**. At 18–24 hours per week, the realistic range is roughly 9–12 weeks. The calendar is a planning aid, not a reason to advance before a completion gate passes.
-
-## Target credentials
-
-- HashiCorp Terraform Associate (004)
-- Kubernetes and Cloud Native Associate (KCNA)
-- Certified Kubernetes Administrator (CKA) as a stretch goal
-- NVIDIA Certified Associate: AI Infrastructure and Operations (NCA-AIIO)
-- Microsoft Security, Compliance, and Identity Fundamentals (SC-900)
-- Microsoft AI-901 or NVIDIA Generative AI LLM Associate only where it aligns with completed capstone work
-
-## Repository structure
-
-```text
-terra-kube-ansible/
-├── README.md
-├── terraform/
-├── ansible/
-├── kubernetes/
-├── integrated-labs/
-├── gitops/
-├── pipelines/
-├── applications/
-├── docs/
-│   ├── index.html
-│   ├── learning-dashboard.md
-│   ├── architecture/
-│   └── evidence/
-└── scripts/
-```
-
-Directories are created as their implementation phases begin; empty placeholders are not required.
+- Work on **one phase at a time**.
+- A task is complete only when it works and the result is committed or documented.
+- Use GitHub Issues for progress tracking.
+- Use the repository for code, configuration, notes, and evidence.
+- Use ChatGPT for instruction, troubleshooting, reviews, and updating GitHub when requested.
+- Do not create a second tracker in Excel, GitHub Projects, or another dashboard.
 
 ## Secrets warning
 
 > [!WARNING]
-> Do not commit passwords, API tokens, private keys, live kubeconfig files, unencrypted application secrets, `.tfvars` files containing secrets, or raw Ansible Vault password files. Use environment variables, ignored local files, Ansible Vault, SOPS/age, Sealed Secrets, or approved platform secret stores as appropriate.
-
-## Completion standard
-
-A phase is complete only when:
-
-1. the implementation works;
-2. the phase completion gate passes;
-3. code and configuration are committed;
-4. the runbook covers deployment, validation, troubleshooting, and teardown;
-5. evidence is recorded or linked;
-6. all roadmap issue tasks are checked.
+> Do not commit passwords, API tokens, private keys, live kubeconfig files, unencrypted secrets, `.tfvars` files containing credentials, or raw Ansible Vault password files.
