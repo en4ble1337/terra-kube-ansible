@@ -2,30 +2,54 @@
 **/.terraform/*
 *.tfstate
 *.tfstate.*
-*.tfvars
-*.tfvars.json
 *.tfplan
+*.tfvars
+!*.tfvars.example
+.terraformrc
+terraform.rc
 crash.log
 crash.*.log
 override.tf
 override.tf.json
 *_override.tf
 *_override.tf.json
-.terraformrc
-terraform.rc
 
-# Ansible
-*.vault
-.vault_pass
-ansible/.vault_pass
-
-# Kubernetes
-kubeconfig
-*.kubeconfig
-.kube/
-
-# Environment / local
+# Credentials and secrets
 .env
 .env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*credentials*
+*secret*
+!*.example
+vault-password*
+.kube/
+kubeconfig*
+!kubeconfig.example
+
+# Ansible
+*.retry
+.ansible/
+
+# Python / applications
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+node_modules/
+
+# Editors and OS
+.vscode/
+.idea/
 .DS_Store
+Thumbs.db
+
+# Generated evidence and binaries
 *.log
+*.zip
+*.tar
+*.tar.gz
+artifacts/
